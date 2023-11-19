@@ -59,28 +59,28 @@ class TestGameLogic(unittest.TestCase):
  def test_bird_movement(self, mock_key_pressed, mock_mouse_pressed):
      # Arrange
      game_logic = GameLogic()
-     mock_key_pressed.return_value = [False, False, False, False] # Simulate no key being pressed
-     mock_mouse_pressed.return_value = [0, 0, 0] # Simulate no mouse button being pressed
+     mock_key_pressed.return_value = [False, False, False, False] # Simulating no key being pressed
+     mock_mouse_pressed.return_value = [0, 0, 0] # Simulating no mouse button being pressed
 
      # Act
      game_logic.update()
 
      # Assert
-     self.assertEqual(game_logic.bird.y, height // 2 + 5) # Check if the bird's y position has changed correctly
+     self.assertEqual(game_logic.bird.y, height // 2 + 5) # Checking if the bird's y position has changed correctly
 
  @patch('pygame.mouse.get_pressed')
  @patch('pygame.key.get_pressed')
  def test_knife_movement(self, mock_key_pressed, mock_mouse_pressed):
      # Arrange
      game_logic = GameLogic()
-     mock_key_pressed.return_value = [False, False, False, False] # Simulate no key being pressed
-     mock_mouse_pressed.return_value = [1, 0, 0] # Simulate the left mouse button being pressed
+     mock_key_pressed.return_value = [False, False, False, False] # Simulating no key being pressed
+     mock_mouse_pressed.return_value = [1, 0, 0] # Simulating the left mouse button being pressed
 
      # Act
      game_logic.update()
 
      # Assert
-     self.assertEqual(game_logic.knife.x, width - 50) # Check if the knife's x position has changed correctly
+     self.assertEqual(game_logic.knife.x, width - 50) # Checking if the knife's x position has changed correctly
 
 if __name__ == '__main__':
    unittest.main()
